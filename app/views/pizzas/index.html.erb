@@ -1,0 +1,22 @@
+<H1>All of our Pizza's</H1>
+
+  <div class="row">
+    <% @pizzas.each do |pizza| %>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= pizza.image %>">
+      <div class= "Caption">
+        <h3><%= pizza.name %></h3>
+        <h3>Cost: $<%= pizza.cost %></h3>
+
+        <%= link_to "More Info", pizza, class: "
+          btn btn-info" %>
+        </div> 
+    </div>
+  </div>
+  <% end %>
+  </div>
+  <br>
+
+<%= link_to 'New Pizza', new_pizza_path, class: "btn btn-primary" %>

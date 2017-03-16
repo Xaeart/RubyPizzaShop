@@ -1,0 +1,52 @@
+<%= form_for(pizza) do |f| %>
+  <% if pizza.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pizza.errors.count, "error") %> prohibited this pizza from being saved:</h2>
+
+      <ul>
+      <% pizza.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :crust %>
+    <%= f.text_field :crust %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sauce %>
+    <%= f.text_field :sauce %>
+  </div>
+
+  <div class="field">
+    <%= f.label :toppings %>
+    <%= f.text_area :toppings %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cost %>
+    <%= f.number_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
